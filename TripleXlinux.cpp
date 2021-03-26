@@ -5,20 +5,20 @@ using namespace std;
 
 void PrintIntroduction(int Difficulty)
 {
-	// string s1="You are a secret agent breaking into a level";
-	// cout<<"\n\n\n->";
-    // for(int j=0; j< s1. size( ) ; j ++)
-    // {
-    //  for(int i=0; i<=10000000 ; i++) ;
-    //       cout<<s1[j];
-    // }
-    // cout<<" ["<<Difficulty<<"] ";
-    // string s2="secure server room...\n-> Entre the correct code to continue...\n";
-    // for(int j=0; j< s2. size( ) ; j ++)
-    // {
-    //  for(int i=0; i<=10000000 ; i++) ;
-    //       cout<<s2[j];
-    // }
+	string s1="You are a secret agent breaking into a level";
+	cout<<"\n\n\n->";
+    for(int j=0; j< s1. size( ) ; j ++)
+    {
+     for(int i=0; i<=10000000 ; i++) ;
+          cout<<s1[j];
+    }
+    cout<<" ["<<Difficulty<<"] ";
+    string s2="secure server room...\n-> Entre the correct code to continue...\n";
+    for(int j=0; j< s2. size( ) ; j ++)
+    {
+     for(int i=0; i<=10000000 ; i++) ;
+          cout<<s2[j];
+    }
    cout<<"  \n\n\n->You are a secret agent breaking into a level ["<<Difficulty<<"]";
    cout<<" secure server room...\n-> Entre the correct code to continue...\n";
 }
@@ -76,7 +76,6 @@ int main()
 	cout<<"********************************************************************\n";
 	cout<<"************************ TRIPLE-X GAME *****************************\n";
 	cout<<"********************************************************************";
-	system("Color B4");
     int LevelDifficulty = 1;
     const int MaxDifficulty = 8;
 
