@@ -1,4 +1,5 @@
 #include<iostream>
+#include<ctime>
 #include<windows.h>
 #include <thread>
 #include <chrono>
@@ -20,8 +21,6 @@ void PrintIntroduction(int Difficulty)
      for(int i=0; i<=10000000 ; i++) ;
           cout<<s2[j];
     }
-   // cout<<"  \n\n\n->You are a secret agent breaking into a level ["<<Difficulty<<"]";
-   //cout<<" secure server room...\n-> Entre the correct code to continue...\n";
 }
 
 bool PlayGame(int Difficulty)
@@ -74,6 +73,8 @@ bool PlayGame(int Difficulty)
 }
 int main()
 {
+    srand(time(NULL)); // create new random sequence based on time of day
+
 	cout<<"********************************************************************\n";
 	cout<<"************************ TRIPLE-X GAME *****************************\n";
 	cout<<"********************************************************************";
