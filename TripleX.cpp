@@ -1,8 +1,8 @@
 #include<iostream>
 #include<ctime>
 #include<windows.h>
-#include <thread>
-#include <chrono>
+// #include <thread>
+// #include <chrono>
 using namespace std;
 
 void PrintIntroduction(int Difficulty)
@@ -47,26 +47,43 @@ bool PlayGame(int Difficulty)
 
     if(GuessSum==CodeSum && GuessProduct==CodeProduct)
     {
-    	cout<<"\n   ";
-    	std::string s="YOU WIN!";
-    for(char c: s)
-    {
-        std::this_thread::sleep_for(std::chrono::seconds(1));
-        std::cout << c << std::flush;
-    }
-        cout<<"\n\n   yeeeee.... \\(^-^)/  ";
+        cout << "\n   ";
+
+        string s = "YOU WIN!";
+
+        // for(char c: s)
+        // {
+        //     std::this_thread::sleep_for(std::chrono::seconds(1));
+        //     std::cout << c << std::flush;
+        // }
+
+        for (int j = 0; j < s.size(); j++)
+        {
+            for (int i = 0; i <= 10000000; i++)
+                ;
+            cout << s[j];
+        }
+        cout << "\n\n   yeeeee.... \\(^-^)/  ";
         return true;
     }
     else
     {
-    	cout<<"\n   ";
-    	std::string s="YOU LOSE!";
-    for(char c: s)
-    {
-        std::this_thread::sleep_for(std::chrono::seconds(1));
-        std::cout << c << std::flush;
-    }
-        cout<<"\n\n    Wtf... [-_-] ";
+        cout << "\n   ";
+        string s = "YOU LOSE!";
+
+        // for (char c : s)
+        // {
+        //     std::this_thread::sleep_for(std::chrono::seconds(1));
+        //     std::cout << c << std::flush;
+        // }
+
+        for (int j = 0; j < s.size(); j++)
+        {
+            for (int i = 0; i <= 10000000; i++)
+                ;
+            cout << s[j];
+        }
+        cout << "\n\n    Wtf... [-_-] ";
 
         return false;
     }
