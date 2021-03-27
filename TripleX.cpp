@@ -95,7 +95,9 @@ int main()
 	cout<<"********************************************************************\n";
 	cout<<"************************ TRIPLE-X GAME *****************************\n";
 	cout<<"********************************************************************";
-	system("Color B4");
+
+    // system("Color B4"); /**** Uncomment and see the magic ****/    
+
     int LevelDifficulty = 1;
     const int MaxDifficulty = 8;
 
