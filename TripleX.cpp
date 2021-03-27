@@ -27,9 +27,9 @@ void PrintIntroduction(int Difficulty)
 bool PlayGame(int Difficulty)
 {
     PrintIntroduction(Difficulty);
-    const int CodeA=rand() % Difficulty + 1; 
-    const int CodeB=rand() % 4;
-    const int CodeC=rand() % Difficulty + 1;
+    const int CodeA=(rand() % Difficulty) + Difficulty;    // add difficulty to remove zero as reminder and make game more hard
+    const int CodeB=(rand() % Difficulty) + 1;             // add one to remove zero as reminder
+    const int CodeC=(rand() % Difficulty) + Difficulty ;
 
     const int CodeSum = CodeA + CodeB + CodeC;
     const int CodeProduct = CodeA * CodeB * CodeC;
