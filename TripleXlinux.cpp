@@ -1,26 +1,28 @@
 #include <iostream>
+#include <thread>
+#include <chrono>
 using namespace std;
+
+void PrintS(string s,int t)
+{
+    for (char c : s)
+    {
+        this_thread::sleep_for(chrono::milliseconds(t));
+        cout << c << flush;
+    }
+}
 
 void PrintIntroduction(int Difficulty)
 {
     string s1 = "You are a secret agent breaking into a level";
     cout << "\n\n\n->";
-    for (int j = 0; j < s1.size(); j++)
-    {
-        for (int i = 0; i <= 10000000; i++)
-            ;
-        cout << s1[j];
-    }
+    PrintS(s1,30);
+
+    this_thread::sleep_for(chrono::milliseconds(30));
     cout << " [" << Difficulty << "] ";
-    string s2 = "secure server room...\n-> Entre the correct code to continue...\n";
-    for (int j = 0; j < s2.size(); j++)
-    {
-        for (int i = 0; i <= 10000000; i++)
-            ;
-        cout << s2[j];
-    }
-    cout << "  \n\n\n->You are a secret agent breaking into a level [" << Difficulty << "]";
-    cout << " secure server room...\n-> Entre the correct code to continue...\n";
+
+    string s2 = "secure server room...\n-> Entre the correct code number to continue...\n\n";
+    PrintS(s2,30);
 }
 
 bool PlayGame(int Difficulty)
@@ -34,47 +36,31 @@ bool PlayGame(int Difficulty)
     const int CodeProduct = CodeA * CodeB * CodeC;
 
     cout << endl;
-    cout << " [Hint]\n\n";
-    cout << "+ There are three number in the code" << endl;
-    cout << "+ The code add up to: " << CodeSum << endl;
-    cout << "+ The code multiply to give: " << CodeProduct << endl;
+    PrintS(" [Hint]\n\n",40);
+    PrintS("+ There are three number in the code\n",40);
+    PrintS("+ The code add up to: ",40);
+    cout << CodeSum << endl;
+    PrintS("+ The code multiply to give: ",40);
+    cout << CodeProduct << endl;
 
     int GuessA, GuessB, GuessC;
-    cout << "\nEntre the code...\n";
+    PrintS("\nEntre the code...\n",40);
     cin >> GuessA >> GuessB >> GuessC;
     int GuessSum = GuessA + GuessB + GuessC;
     int GuessProduct = GuessA * GuessB * GuessC;
 
     if (GuessSum == CodeSum && GuessProduct == CodeProduct)
     {
-        cout << "\n   ";
-        string s = "YOU WIN!";
-
-        for (int j = 0; j < s.size(); j++)
-        {
-            for (int i = 0; i <= 10000000; i++)
-                ;
-            cout << s[j];
-        }
-        cout << "\n\n   yeeeee.... \\(^-^)/  ";
+        PrintS("\nYOU WIN!\n\n   yeeeee.... \\(^-^)/  ",50);
         return true;
     }
     else
     {
-        cout << "\n   ";
-        string s = "YOU LOSE!";
-
-        for (int j = 0; j < s.size(); j++)
-        {
-            for (int i = 0; i <= 10000000; i++)
-                ;
-            cout << s[j];
-        }
-        cout << "\n\n    Wtf... [-_-] ";
-
+        PrintS("\nYOU LOSE!\n\n    Wtf... [-_-] ",50);
         return false;
     }
 }
+
 int main()
 {
     cout << "********************************************************************\n";
@@ -86,15 +72,15 @@ int main()
     while (LevelDifficulty <= MaxDifficulty)
     {
         bool bLevelComplete = PlayGame(LevelDifficulty);
-        cin.clear();  //Clear any error
-        cin.ignore(); //clear the buffer
+        cin.clear();  // Clear any error
+        cin.ignore(); // clear the buffer
         if (bLevelComplete)
         {
             ++LevelDifficulty;
-            cout << "\n\n*** Well done agent! You have extracted a file! Keep going! ***";
+            PrintS("\n\n*** Well done agent! You have extracted a file! Keep going! ***",30);
         }
         else
-            cout << "\n\n*** You entre a wrong code! Try again! ***";
+            PrintS("\n\n*** You entre a wrong code! Try again! ***",30);
 
         cout << "\n--------------------------------------------------------------------------\n\n";
     }
